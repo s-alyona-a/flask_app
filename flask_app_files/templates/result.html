@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Results</title>
+</head>
+<body>
+    <header>
+		<ul class="nav nav-tabs" role="tablist">
+			<li><a href="#">Главная</a></li>
+			<li>
+				<a href="/questions">
+					Анкета
+				</a>
+			</li>
+			<li class="active">
+				<a href="/stats">
+					Результаты
+				</a>
+		</ul>
+	</header>
+    <table>
+        <tr><b>Личные сведения</b></tr>
+        <tr>
+            <td>Средний возраст</td>
+            <td>{{ all_info['age_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Минимальный возраст</td>
+            <td>{{ all_info['age_min'] }}</td>
+        </tr>
+        <tr>
+            <td>Максимальный возраст</td>
+            <td>{{ all_info['age_max'] }}</td>
+        </tr>
+        <tr>
+            <td>Количество мужчин</td>
+            <td>{{ all_info['men'] }}</td>
+        </tr>
+        <tr>
+            <td>Количество женщин</td>
+            <td>{{ all_info['women'] }}</td>
+        </tr>
+        <tr>
+            <td>Количество лингвистов</td>
+            <td>{{ all_info['ling'] }}</td>
+        </tr>
+        <tr>
+            <td>Количество НЕ лингвистов</td>
+            <td>{{ all_info['not_ling'] }}</td>
+        </tr>
+        <tr>
+            <td>Количество неопределившихся</td>
+            <td>{{ all_info['middle_count'] }}</td>
+        </tr>
+    </table>
+    <table>
+        <tr><b>Статистика по вопросам</b></tr
+        <tr>
+            <td>Средний ответ на вопрос 1</td>
+            <td>{{ all_info['q1_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 2</td>
+            <td>{{ all_info['q2_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 3</td>
+            <td>{{ all_info['q3_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 4</td>
+            <td>{{ all_info['q4_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 5</td>
+            <td>{{ all_info['q5_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 6</td>
+            <td>{{ all_info['q6_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 7</td>
+            <td>{{ all_info['q7_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 8</td>
+            <td>{{ all_info['q8_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 9</td>
+            <td>{{ all_info['q9_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Средний ответ на вопрос 10</td>
+            <td>{{ all_info['q10_mean'] }}</td>
+        </tr>
+    </table>
+</body>
+</html>

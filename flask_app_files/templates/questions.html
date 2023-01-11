@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<title>Questions</title>
+	</head>
+	<body>
+	<header>
+		<ul class="nav nav-tabs" role="tablist">
+			<li><a href="#">Главная</a></li>
+			<li class="active">
+				<a href="/questions">
+					Анкета
+				</a>
+			</li>
+			<li>
+				<a href="/stats">
+					Результаты
+				</a>
+		</ul>
+	</header>
+		<h2>Очень важный опрос</h2>
+		<form class="container" action="/process">
+			<h4>Анкета информанта</h4>
+			<div class="row">
+				<div class="col-md-4">Имя</div>
+				<div class="col-md-4"><label>
+					<input type="text" name="username">
+				</label></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">Возраст</div>
+				<div class="col-md-4"><label>
+					<input type="number" name="age">
+				</label></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">Гендер</div>
+				<label>
+					<select name="gender" class="col-md-4">
+						<option value="male">м</option>
+						<option value="female">ж</option>
+						<option value="other">другой</option>
+					</select>
+				</label>
+			</div>
+			<div class="row">
+				<div class="col-md-4">Уровень образования</div>
+				<label>
+					<select name="education" class="col-md-4">
+						<option value="kindergarten">детский сад</option>
+						<option value="school_9">9 классов школы</option>
+						<option value="school_11">11 классов школы</option>
+						<option value="college">среднее специальное</option>
+						<option value="student">неоконченное высшее</option>
+						<option value="bachelor">бакалавриат/специалитет</option>
+						<option value="master">магистратура</option>
+						<option value="phd">аспирантура</option>
+						<option value="candidate">кандидат наук</option>
+						<option value="doctor">доктор наук</option>
+					</select>
+				</label>
+			</div>
+            <div class="row">
+				<div class="col-md-4">Вы связаны с лингвистикой?</div>
+				<label>
+					<select name="linguistics" class="col-md-4">
+						<option value="yes">Определённо да</option>
+						<option value="middle">Отчасти</option>
+						<option value="no">Совершенно нет</option>
+					</select>
+				</label>
+			</div>
+			<h2>Вопросы</h2>
+            {% for question in questions_list %}
+			    <div class="row">
+				    <p class="col-md-6" align="center"><b>{{question.id}}. {{question.text}}</b></p>
+					<table class="col-md-8">
+						<tr>
+							<td align="center"><label>
+								<input class="radio" type="radio" name="q{{ question.id }}" value=1>
+							</label></td>
+							<td align="center"><label>
+								<input class="radio" type="radio" name="q{{ question.id }}" value=0>
+							</label></td>
+						</tr>
+						<tr>
+							<td align="center">Звучит</td>
+							<td align="center">Не звучит</td>
+						</tr>
+					</table>
+			    </div>
+            {% endfor %}
+			<div class="row">
+				<label>
+					<input type="submit" class="submit" name="submit" value="Отправить">
+				</label>
+			</div>
+		</form>
+	</body>
+</html>
